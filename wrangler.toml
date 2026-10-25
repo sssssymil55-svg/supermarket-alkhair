@@ -10,7 +10,7 @@ run_worker_first = true
 [[d1_databases]]
 binding = "DB"
 database_name = "alkhair-store-db"
-https://github.com/sssssymil55-svg/supermarket-alkhair/edit/main/wrangler.toml?utm_source=chatgpt.com
+database_id = "2ad46c14-94d7-49a4-98b3-9d133eb280ba"
 migrations_dir = "migrations"
 
 [vars]
