@@ -20,7 +20,11 @@
 <div id="productTab"><h3 id="formTitle">إضافة منتج</h3><form id="productForm" class="form-grid">
 <input type="hidden" id="productId"><label>اسم المنتج<input id="pName" required></label><label>القسم<input id="pCategory" placeholder="مواد غذائية"></label>
 <label>السعر (د.ع)<input id="pPrice" type="number" min="0" required></label><label>الكمية المتوفرة<input id="pStock" type="number" min="0" value="0" required></label>
-<label class="wide">رابط صورة المنتج (اختياري)<input id="pImage" type="url" placeholder="https://..."></label><label class="wide">وصف مختصر<input id="pDesc"></label>
+<input type="hidden" id="pImage">
+<label class="wide">صورة المنتج من الاستوديو
+<input id="pImageFile" type="file" accept="image/*">
+</label>
+<img id="pImagePreview" hidden style="max-width:150px;border-radius:10px">
 <div class="wide actions"><button class="primary" type="submit">حفظ المنتج</button><button type="button" id="clearForm">تفريغ</button></div></form>
 <div id="adminProducts" class="admin-list"></div></div>
 <div id="ordersTab" hidden><h3>الطلبات الواردة</h3><button id="refreshOrders">تحديث الطلبات</button><div id="ordersList" class="admin-list"></div></div>
