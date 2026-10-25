@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#198754"><meta name="description" content="سوبر ماركت الخير - تسوق بسهولة">
+<link rel="manifest" href="/manifest.json"><link rel="icon" href="/icon.svg" type="image/svg+xml">
+<title>سوبر ماركت الخير</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="brand-mark">خ</span><div><h1>سوبر ماركت الخير</h1><small>كل احتياجات البيت بمكان واحد</small></div></div><button id="cartBtn" class="cart-btn">🛒 السلة <b id="cartCount">0</b></button></header>
+<section class="hero"><div><span class="pill">أهلاً وسهلاً بكم</span><h2>تسوّق براحتك، والباقي علينا</h2><p>منتجات يومية وأسعار واضحة وتوصيل للمنزل.</p></div><div class="hero-emoji">🛍️</div></section>
+<main>
+<div class="toolbar"><input id="search" type="search" placeholder="ابحث عن منتج..."><select id="category"><option value="">كل الأقسام</option></select></div>
+<div id="status" class="status">جارٍ تحميل المنتجات...</div><section id="products" class="products"></section>
+<section class="admin-panel">
+<details><summary>إدارة المتجر</summary>
+<div class="admin-login" id="adminLogin"><p>أدخل رمز الإدارة للمتابعة.</p><input id="adminPin" type="password" inputmode="numeric" placeholder="رمز الإدارة"><button id="loginBtn" class="primary">دخول</button><p class="hint">غيّر رمز الإدارة من إعدادات Cloudflare قبل نشر المتجر.</p></div>
+<div id="adminArea" hidden>
+<div class="admin-tabs"><button data-tab="productTab" class="active">المنتجات</button><button data-tab="ordersTab">الطلبات</button></div>
+<div id="productTab"><h3 id="formTitle">إضافة منتج</h3><form id="productForm" class="form-grid">
+<input type="hidden" id="productId"><label>اسم المنتج<input id="pName" required></label><label>القسم<input id="pCategory" placeholder="مواد غذائية"></label>
+<label>السعر (د.ع)<input id="pPrice" type="number" min="0" required></label><label>الكمية المتوفرة<input id="pStock" type="number" min="0" value="0" required></label>
+<label class="wide">رابط صورة المنتج (اختياري)<input id="pImage" type="url" placeholder="https://..."></label><label class="wide">وصف مختصر<input id="pDesc"></label>
+<div class="wide actions"><button class="primary" type="submit">حفظ المنتج</button><button type="button" id="clearForm">تفريغ</button></div></form>
+<div id="adminProducts" class="admin-list"></div></div>
+<div id="ordersTab" hidden><h3>الطلبات الواردة</h3><button id="refreshOrders">تحديث الطلبات</button><div id="ordersList" class="admin-list"></div></div>
+</div></details></section>
+</main>
+<footer>سوبر ماركت الخير <span>•</span> الدفع نقداً عند الاستلام <span>•</span> أجور التوصيل ١٬٠٠٠ د.ع</footer>
+<div id="cartModal" class="modal" hidden><div class="modal-card"><button class="close" id="closeCart">✕</button><h2>سلة المشتريات</h2><div id="cartItems"></div><div id="cartTotals"></div><form id="checkoutForm"><h3>بيانات التوصيل</h3><label>الاسم<input id="customerName" required></label><label>رقم الهاتف<input id="customerPhone" required inputmode="tel"></label><label>العنوان بالتفصيل<textarea id="customerAddress" required rows="2"></textarea></label><label>ملاحظات (اختياري)<textarea id="customerNotes" rows="2"></textarea></label><button class="primary block" type="submit">تأكيد الطلب</button></form><p id="checkoutMessage" class="status"></p></div></div>
+<script src="/app.js"></script>
+</body></html>

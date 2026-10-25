@@ -1,0 +1,17 @@
+name = "alkhair-store"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "alkhair-store-db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+migrations_dir = "migrations"
+
+[vars]
+# Do not put ADMIN_PIN or ADMIN_TOKEN here. Set them as Worker secrets.
